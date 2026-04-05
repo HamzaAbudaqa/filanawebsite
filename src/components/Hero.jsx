@@ -23,7 +23,7 @@ export default function Hero() {
           <span
             className="inline-block"
             style={{
-              background: 'linear-gradient(180deg, #ffffff 0%, #999 100%)',
+              background: 'linear-gradient(180deg, #888 0%, #444 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               textShadow: 'none',
@@ -34,12 +34,12 @@ export default function Hero() {
           <span
             className="inline-block"
             style={{
-              background: 'linear-gradient(180deg, #ffffff 0%, #999 100%)',
+              background: 'linear-gradient(180deg, #888 0%, #444 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               filter: 'drop-shadow(0 4px 8px rgba(79,70,229,0.3)) drop-shadow(0 1px 0 rgba(255,255,255,0.1))',
             }}
-          >and finally </span>
+          >and finally </span>{' '}
           <span className="text-white">under control.</span>
         </span>
       </motion.h1>
