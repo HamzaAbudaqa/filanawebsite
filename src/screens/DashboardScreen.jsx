@@ -11,7 +11,7 @@ export default function DashboardScreen() {
           <p className="text-[11px] text-white/30">Good morning</p>
           <h2 className="text-[18px] font-bold tracking-tight">Hello, Sarah</h2>
         </div>
-        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#7B5CFF]/20 to-[#7B5CFF]/5 border border-[#7B5CFF]/20 flex items-center justify-center text-[12px] font-semibold text-[#7B5CFF]">
+        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#4F46E5]/20 to-[#4F46E5]/5 border border-[#4F46E5]/20 flex items-center justify-center text-[12px] font-semibold text-[#4F46E5]">
           S
         </div>
       </div>
@@ -20,7 +20,7 @@ export default function DashboardScreen() {
       <div className="relative rounded-[20px] p-4 pb-4 mb-3 overflow-hidden">
         {/* Card background gradient */}
         <div className="absolute inset-0 rounded-[20px]" style={{
-          background: 'linear-gradient(135deg, #7B5CFF 0%, #6347D9 50%, #4E35B1 100%)',
+          background: 'linear-gradient(135deg, #4F46E5 0%, #3730A3 50%, #312E81 100%)',
         }} />
         {/* Inner glow */}
         <div className="absolute -top-8 -right-8 w-28 h-28 rounded-full bg-white/20 blur-2xl" />
@@ -47,7 +47,7 @@ export default function DashboardScreen() {
       <div className="grid grid-cols-2 gap-2 mb-3">
         <div className="bg-[#111] rounded-[14px] p-3 border border-white/[0.04]" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
           <p className="text-[9px] text-white/25 mb-0.5 uppercase tracking-wide">Income</p>
-          <p className="text-[16px] font-bold text-[#7B5CFF]">$8,240</p>
+          <p className="text-[16px] font-bold text-[#4F46E5]">$8,240</p>
         </div>
         <div className="bg-[#111] rounded-[14px] p-3 border border-white/[0.04]" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
           <p className="text-[9px] text-white/25 mb-0.5 uppercase tracking-wide">Expenses</p>
@@ -73,7 +73,7 @@ export default function DashboardScreen() {
                 <p className="text-[10px] text-white/20">{tx.cat}</p>
               </div>
             </div>
-            <span className={`text-[12px] font-semibold ${tx.positive ? 'text-[#7B5CFF]' : 'text-white/60'}`}>{tx.amount}</span>
+            <span className={`text-[12px] font-semibold ${tx.positive ? 'text-[#4F46E5]' : 'text-white/60'}`}>{tx.amount}</span>
           </div>
         ))}
       </div>
@@ -81,7 +81,7 @@ export default function DashboardScreen() {
       {/* Bottom nav */}
       <div className="flex items-center justify-around mt-3 pt-3 border-t border-white/[0.04]">
         {['⬡', '◎', '▤', '⚙'].map((icon, i) => (
-          <div key={i} className={`w-9 h-9 rounded-full flex items-center justify-center text-[14px] ${i === 0 ? 'bg-[#7B5CFF] text-black' : 'text-white/15'}`}>
+          <div key={i} className={`w-9 h-9 rounded-full flex items-center justify-center text-[14px] ${i === 0 ? 'bg-[#4F46E5] text-black' : 'text-white/15'}`}>
             {icon}
           </div>
         ))}

@@ -3,7 +3,7 @@
  * Shows auto-categorized spending with progress bars and receipt scan.
  */
 const categories = [
-  { name: 'Food & Drink', amount: '$482', pct: 38, color: '#7B5CFF' },
+  { name: 'Food & Drink', amount: '$482', pct: 38, color: '#4F46E5' },
   { name: 'Transport', amount: '$156', pct: 20, color: '#4ADE80' },
   { name: 'Shopping', amount: '$312', pct: 32, color: '#22D3EE' },
   { name: 'Subscriptions', amount: '$90', pct: 10, color: '#A78BFA' },
@@ -14,8 +14,8 @@ export default function CategoriesScreen() {
     <div className="flex flex-col h-full bg-[#080808] text-white px-5 pt-14 pb-4">
       {/* Header */}
       <div className="flex items-center gap-2 mb-1">
-        <div className="w-2 h-2 rounded-full bg-[#7B5CFF] animate-pulse" />
-        <span className="text-[10px] text-[#7B5CFF] font-medium uppercase tracking-wider">AI Categorized</span>
+        <div className="w-2 h-2 rounded-full bg-[#4F46E5] animate-pulse" />
+        <span className="text-[10px] text-[#4F46E5] font-medium uppercase tracking-wider">AI Categorized</span>
       </div>
       <h2 className="text-[18px] font-bold tracking-tight mb-5">Smart Categories</h2>
 
@@ -62,7 +62,7 @@ export default function CategoriesScreen() {
       </div>
 
       {/* Bottom insight */}
-      <div className="mt-3 bg-[#7B5CFF]/[0.06] border border-[#7B5CFF]/10 rounded-[12px] px-3.5 py-2.5">
+      <div className="mt-3 bg-[#4F46E5]/[0.06] border border-[#4F46E5]/10 rounded-[12px] px-3.5 py-2.5">
         <p className="text-[10px] text-white/40">12 transactions auto-categorized this week</p>
       </div>
     </div>

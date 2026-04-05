@@ -32,7 +32,7 @@ export default function FeatureSection() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="rounded-[24px] p-8 md:p-10 relative overflow-hidden group cursor-pointer"
             style={{
-              background: 'linear-gradient(135deg, #7B5CFF 0%, #6347D9 60%, #4E35B1 100%)',
+              background: 'linear-gradient(135deg, #4F46E5 0%, #3730A3 60%, #312E81 100%)',
             }}
           >
             <div className="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-white/10 group-hover:scale-110 transition-transform duration-700" />
@@ -52,7 +52,7 @@ export default function FeatureSection() {
                 Finova learns your patterns and categorizes every transaction instantly. No rules, no manual sorting — just clarity.
               </p>
 
-              <button className="mt-6 bg-white text-[#7B5CFF] font-semibold text-[14px] px-6 py-3 rounded-full hover:bg-white/90 transition-colors">
+              <button className="mt-6 bg-white text-[#4F46E5] font-semibold text-[14px] px-6 py-3 rounded-full hover:bg-white/90 transition-colors">
                 Learn more →
               </button>
             </div>

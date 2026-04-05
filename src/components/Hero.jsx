@@ -10,22 +10,7 @@ import DeviceMockupCluster from './DeviceMockupCluster'
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center pt-32 px-6 overflow-hidden">
-      {/* Feature badge */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="flex items-center gap-2 rounded-full px-4 py-2 mb-8"
-        style={{
-          background: 'rgba(177,247,11,0.05)',
-          border: '1px solid rgba(177,247,11,0.1)',
-        }}
-      >
-        <span className="w-2 h-2 rounded-full bg-lime animate-pulse" />
-        <span className="text-[13px] text-lime/70 font-medium">AI-Powered Finance</span>
-      </motion.div>
-
-      {/* Massive headline — split opacity for visual depth */}
+      {/* Massive headline — 3D popping text for key words */}
       <motion.h1
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -35,9 +20,26 @@ export default function Hero() {
         <span className="block text-[48px] md:text-[68px] lg:text-[84px] font-bold tracking-[-0.04em] leading-[0.96]">
           <span className="text-white">Your finances.</span>
           <br />
-          <span className="text-white/30">Clear, automated,</span>
+          <span
+            className="inline-block"
+            style={{
+              background: 'linear-gradient(180deg, #ffffff 0%, #999 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              textShadow: 'none',
+              filter: 'drop-shadow(0 4px 8px rgba(79,70,229,0.3)) drop-shadow(0 1px 0 rgba(255,255,255,0.1))',
+            }}
+          >Clear, automated,</span>
           <br />
-          <span className="text-white/30">and finally </span>
+          <span
+            className="inline-block"
+            style={{
+              background: 'linear-gradient(180deg, #ffffff 0%, #999 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              filter: 'drop-shadow(0 4px 8px rgba(79,70,229,0.3)) drop-shadow(0 1px 0 rgba(255,255,255,0.1))',
+            }}
+          >and finally </span>
           <span className="text-white">under control.</span>
         </span>
       </motion.h1>

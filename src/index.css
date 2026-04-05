@@ -4,8 +4,8 @@
   --color-bg: #050505;
   --color-surface: #0E0E0E;
   --color-surface-alt: #161616;
-  --color-lime: #7B5CFF;
-  --color-lime-dim: #6347D9;
+  --color-lime: #4F46E5;
+  --color-lime-dim: #3730A3;
   --color-olive: #565B3D;
   --color-muted: #999;
   --color-muted-dark: #555;
@@ -30,6 +30,6 @@ body {
 }
 
 ::selection {
-  background: #7B5CFF30;
+  background: #4F46E530;
   color: #F5F5F5;
 }
