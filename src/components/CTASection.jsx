@@ -1,17 +1,10 @@
 import { motion } from 'framer-motion'
 
+const PINK = '#d94391'
+
 export default function CTASection() {
   return (
     <section className="relative py-32 px-6 overflow-hidden">
-      {/* Background glow */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse, rgba(177,247,11,0.04) 0%, transparent 60%)',
-          filter: 'blur(80px)',
-        }}
-      />
-
       <div className="max-w-4xl mx-auto text-center relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -20,7 +13,7 @@ export default function CTASection() {
           transition={{ duration: 0.7 }}
         >
           <div className="flex items-center justify-center gap-2 mb-8">
-            <div className="w-1.5 h-1.5 rounded-full bg-lime" />
+            <div className="w-1.5 h-1.5 rounded-full" style={{ background: PINK }} />
             <span className="text-[12px] text-white/25 uppercase tracking-[3px] font-medium">Get started</span>
           </div>
 
@@ -30,20 +23,35 @@ export default function CTASection() {
             <span className="text-white/25">of your finances.</span>
           </h2>
 
-          <p className="text-[#444] text-[16px] md:text-[18px] max-w-md mx-auto leading-relaxed mb-10">
-            Download Finova and see where your money actually goes. Your first month is free.
+          <p
+            className="text-[16px] md:text-[18px] max-w-md mx-auto leading-relaxed mb-10"
+            style={{ color: 'rgba(255,255,255,0.30)' }}
+          >
+            Download Filana and see where your money actually goes. Your first month is free.
           </p>
 
           <div className="flex items-center justify-center gap-3">
             <button
-              className="bg-lime text-white font-semibold px-8 py-4 rounded-full text-[15px] transition-all duration-300 active:scale-95"
+              className="text-white font-semibold px-8 py-4 rounded-full text-[15px] transition-all duration-300 active:scale-95"
               style={{
-                boxShadow: '0 0 30px rgba(177,247,11,0.12), 0 4px 15px rgba(0,0,0,0.3)',
+                background: PINK,
+                boxShadow: '0 0 28px rgba(217,67,145,0.18), 0 4px 15px rgba(0,0,0,0.3)',
               }}
+              onMouseEnter={e => e.currentTarget.style.boxShadow = '0 0 40px rgba(217,67,145,0.30), 0 4px 15px rgba(0,0,0,0.3)'}
+              onMouseLeave={e => e.currentTarget.style.boxShadow = '0 0 28px rgba(217,67,145,0.18), 0 4px 15px rgba(0,0,0,0.3)'}
             >
               Start tracking
             </button>
-            <button className="bg-white/[0.04] border border-white/[0.07] text-white/50 font-medium px-8 py-4 rounded-full text-[15px] hover:bg-white/[0.07] transition-all duration-300">
+            <button
+              className="font-medium px-8 py-4 rounded-full text-[15px] transition-all duration-300"
+              style={{
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.07)',
+                color: 'rgba(255,255,255,0.50)',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.07)' }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)' }}
+            >
               See how it works
             </button>
           </div>

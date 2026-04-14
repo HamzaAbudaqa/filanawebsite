@@ -1,5 +1,5 @@
 /**
- * DashboardScreen — Main Finova dashboard for the CENTER phone.
+ * DashboardScreen — Main Filana dashboard for the CENTER phone.
  * Shows greeting, balance card with lime gradient + glow, quick stats, recent transactions.
  */
 export default function DashboardScreen() {
