@@ -75,6 +75,7 @@ const services = [
       'Auto-refresh every few hours in the background',
       'Read-only access — Filana never moves money',
     ],
+    images: ['/IMG_2264.PNG'],
     screenshotAlt: 'Account Sync screen',
     flip: true,
   },
