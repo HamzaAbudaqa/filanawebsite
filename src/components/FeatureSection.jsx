@@ -41,17 +41,6 @@ export default function FeatureSection() {
               border: '1px solid rgba(255,255,255,0.06)',
             }}
           >
-            {/* Subtle pink glow top-right */}
-            <div
-              className="absolute -top-20 -right-20 w-56 h-56 rounded-full pointer-events-none"
-              style={{
-                background: 'radial-gradient(circle, rgba(217,67,145,0.08) 0%, transparent 70%)',
-                filter: 'blur(40px)',
-              }}
-            />
-            {/* Decorative circle */}
-            <div className="absolute -top-8 -right-8 w-40 h-40 rounded-full bg-white/[0.02] group-hover:scale-110 transition-transform duration-700" />
-
             <div className="relative">
               <div
                 className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 mb-6"
