@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -9,6 +9,7 @@ const navItems = [
 
 export default function Navbar() {
   const location = useLocation()
+  const navigate = useNavigate()
 
   return (
     <motion.nav
@@ -64,6 +65,7 @@ export default function Navbar() {
           onMouseLeave={(e) => {
             e.currentTarget.style.boxShadow = '0 0 20px rgba(217,67,145,0.20), 0 2px 8px rgba(0,0,0,0.3)'
           }}
+          onClick={() => navigate('/download')}
         >
           Start tracking
         </button>

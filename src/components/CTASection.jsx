@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 const PINK = '#d94391'
 
 export default function CTASection() {
+  const navigate = useNavigate()
   return (
     <section className="relative py-32 px-6 overflow-hidden">
       <div className="max-w-4xl mx-auto text-center relative">
@@ -39,6 +41,7 @@ export default function CTASection() {
               }}
               onMouseEnter={e => e.currentTarget.style.boxShadow = '0 0 40px rgba(217,67,145,0.30), 0 4px 15px rgba(0,0,0,0.3)'}
               onMouseLeave={e => e.currentTarget.style.boxShadow = '0 0 28px rgba(217,67,145,0.18), 0 4px 15px rgba(0,0,0,0.3)'}
+              onClick={() => navigate('/download')}
             >
               Start tracking
             </button>

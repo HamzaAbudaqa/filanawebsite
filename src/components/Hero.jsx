@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import DeviceMockupCluster from './DeviceMockupCluster'
 
 const PINK = '#d94391'
 
 export default function Hero() {
+  const navigate = useNavigate()
   return (
     <section className="relative min-h-screen flex flex-col items-center pt-32 px-6 overflow-hidden">
       <motion.h1
@@ -48,6 +50,7 @@ export default function Hero() {
           }}
           onMouseEnter={e => e.currentTarget.style.boxShadow = '0 0 40px rgba(217,67,145,0.32), 0 4px 15px rgba(0,0,0,0.3)'}
           onMouseLeave={e => e.currentTarget.style.boxShadow = '0 0 28px rgba(217,67,145,0.20), 0 4px 15px rgba(0,0,0,0.3)'}
+          onClick={() => navigate('/download')}
         >
           Start tracking
         </button>

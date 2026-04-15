@@ -5,7 +5,7 @@ import FeatureSection from './components/FeatureSection'
 import CTASection from './components/CTASection'
 import ServicesPage from './pages/ServicesPage'
 import PrivacyPage from './pages/PrivacyPage'
-
+import DownloadPage from './pages/DownloadPage'
 function HomePage() {
   return (
     <div className="relative min-h-screen bg-[#050505]">
@@ -50,6 +50,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/download" element={<DownloadPage />} />
       </Routes>
     </BrowserRouter>
   )

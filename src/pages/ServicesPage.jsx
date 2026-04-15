@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 
 const PINK = '#d94391'
@@ -194,6 +195,7 @@ function ServiceRow({ service }) {
 }
 
 export default function ServicesPage() {
+  const navigate = useNavigate()
   return (
     <div className="min-h-screen" style={{ background: '#050505' }}>
       <Navbar />
@@ -260,6 +262,7 @@ export default function ServicesPage() {
             }}
             onMouseEnter={e => e.currentTarget.style.boxShadow = '0 0 36px rgba(217,67,145,0.28), 0 4px 15px rgba(0,0,0,0.3)'}
             onMouseLeave={e => e.currentTarget.style.boxShadow = '0 0 24px rgba(217,67,145,0.18), 0 4px 15px rgba(0,0,0,0.3)'}
+            onClick={() => navigate('/download')}
           >
             Start tracking
           </button>
