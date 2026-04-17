@@ -69,12 +69,12 @@ const services = [
     tag: 'Account Sync',
     title: 'All your accounts, one place.',
     description:
-      'Connect bank accounts, credit cards, and digital wallets securely. Filana keeps everything in sync so you always have an up-to-date picture of your net worth.',
+      'Bank accounts sync through Plaid — the same trusted infrastructure behind Venmo and Robinhood — giving you access to 10,000+ financial institutions. Email receipts and subscriptions are pulled in via Google. All connections are read-only and encrypted end-to-end, so Filana can see your data but never touch it.',
     bullets: [
-      'Bank-level 256-bit encryption',
-      'Connects to 10,000+ financial institutions',
-      'Auto-refresh every few hours in the background',
-      'Read-only access — Filana never moves money',
+      'Bank sync powered by Plaid — read-only, never moves money',
+      'Email sync via Google for receipts and subscription tracking',
+      'End-to-end 256-bit encryption on all synced data',
+      'Revoke access at any time from your device settings',
     ],
     images: ['/IMG_2264.PNG'],
     screenshotAlt: 'Account Sync screen',

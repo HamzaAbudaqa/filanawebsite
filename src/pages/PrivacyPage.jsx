@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
 import Navbar from '../components/Navbar'
 
-const PINK     = '#d94391'
-const PINK_DIM = 'rgba(217,67,145,0.12)'
 const LAST_UPDATED = 'April 05, 2026'
 
 // ─── TABLE OF CONTENTS ───────────────────────────────────────────────────────
@@ -270,10 +268,10 @@ function BulletList({ items, dimmer = false }) {
           style={{ color: dimmer ? 'rgba(255,255,255,0.38)' : 'rgba(255,255,255,0.45)' }}>
           <span
             className="mt-[5px] w-3.5 h-3.5 rounded-full flex-shrink-0 flex items-center justify-center"
-            style={{ background: PINK_DIM }}
+            style={{ background: 'rgba(255,255,255,0.07)' }}
           >
             <svg width="7" height="5" viewBox="0 0 8 6" fill="none">
-              <path d="M1 3l2 2 4-4" stroke={PINK} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M1 3l2 2 4-4" stroke="rgba(255,255,255,0.45)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </span>
           {item}
@@ -299,7 +297,7 @@ export default function PrivacyPage() {
         >
           <div
             className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 mb-6 text-[12px] font-medium tracking-widest uppercase"
-            style={{ background: PINK_DIM, color: PINK, letterSpacing: '0.15em' }}
+            style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.38)', letterSpacing: '0.15em' }}
           >
             Legal
           </div>
@@ -333,7 +331,7 @@ export default function PrivacyPage() {
           </p>
           <p>
             <span style={{ color: 'rgba(255,255,255,0.72)', fontWeight: 600 }}>Questions or concerns?</span> Reading this Privacy Notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at{' '}
-            <a href="mailto:hamza.daqa@gmail.com" style={{ color: PINK, textDecoration: 'underline' }}>hamza.daqa@gmail.com</a>.
+            <a href="mailto:hamza.daqa@gmail.com" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>hamza.daqa@gmail.com</a>.
           </p>
         </motion.div>
 
@@ -344,7 +342,7 @@ export default function PrivacyPage() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5 }}
           className="mb-12 rounded-2xl p-6"
-          style={{ background: 'rgba(217,67,145,0.06)', border: '1px solid rgba(217,67,145,0.14)' }}
+          style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.07)' }}
         >
           <h2 className="text-[17px] font-semibold text-white mb-4 tracking-tight">Summary of Key Points</h2>
           <div className="flex flex-col gap-3 text-[14px]" style={{ color: 'rgba(255,255,255,0.42)' }}>
@@ -376,9 +374,9 @@ export default function PrivacyPage() {
                 <a
                   href={`#${id}`}
                   className="text-[14px] transition-colors duration-150"
-                  style={{ color: PINK, textDecoration: 'none' }}
-                  onMouseEnter={e => (e.target.style.opacity = '0.7')}
-                  onMouseLeave={e => (e.target.style.opacity = '1')}
+                  style={{ color: 'rgba(255,255,255,0.42)', textDecoration: 'none' }}
+                  onMouseEnter={e => (e.target.style.color = 'rgba(255,255,255,0.8)')}
+                  onMouseLeave={e => (e.target.style.color = 'rgba(255,255,255,0.42)')}
                 >
                   {label}
                 </a>
@@ -428,7 +426,7 @@ export default function PrivacyPage() {
             {section.subsections?.map((sub, j) => (
               <div key={j} className="mt-7">
                 <h3 className="text-[14px] font-semibold mb-3 tracking-wide uppercase"
-                  style={{ color: PINK, letterSpacing: '0.08em', fontSize: '12px' }}>
+                  style={{ color: 'rgba(255,255,255,0.28)', letterSpacing: '0.08em', fontSize: '12px' }}>
                   {sub.subtitle}
                 </h3>
                 {sub.intro && (
