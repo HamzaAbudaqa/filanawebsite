@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import FeatureSection from './components/FeatureSection'
@@ -6,6 +6,7 @@ import CTASection from './components/CTASection'
 import ServicesPage from './pages/ServicesPage'
 import PrivacyPage from './pages/PrivacyPage'
 import DownloadPage from './pages/DownloadPage'
+import SupportPage from './pages/SupportPage'
 function HomePage() {
   return (
     <div className="relative min-h-screen bg-[#050505]">
@@ -24,17 +25,28 @@ function HomePage() {
             {[
               { label: 'Privacy', href: '/privacy' },
               { label: 'Terms', href: '#' },
-              { label: 'Support', href: '#' },
+              { label: 'Support', href: '/support' },
               { label: 'Careers', href: '#' },
-            ].map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-[13px] text-white/15 hover:text-white/35 transition-colors duration-300"
-              >
-                {item.label}
-              </a>
-            ))}
+            ].map((item) =>
+              item.href.startsWith('/') ? (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className="text-[13px] text-white/15 hover:text-white/35 transition-colors duration-300"
+                  style={{ textDecoration: 'none' }}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="text-[13px] text-white/15 hover:text-white/35 transition-colors duration-300"
+                >
+                  {item.label}
+                </a>
+              )
+            )}
           </div>
           <p className="text-[12px] text-white/[0.08]">&copy; 2026 Filana. All rights reserved.</p>
         </div>
@@ -51,6 +63,7 @@ export default function App() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/download" element={<DownloadPage />} />
+        <Route path="/support" element={<SupportPage />} />
       </Routes>
     </BrowserRouter>
   )
