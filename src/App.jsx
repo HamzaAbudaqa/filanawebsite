@@ -5,6 +5,7 @@ import FeatureSection from './components/FeatureSection'
 import CTASection from './components/CTASection'
 import ServicesPage from './pages/ServicesPage'
 import PrivacyPage from './pages/PrivacyPage'
+import TermsPage from './pages/TermsPage'
 import DownloadPage from './pages/DownloadPage'
 import SupportPage from './pages/SupportPage'
 function HomePage() {
@@ -24,7 +25,7 @@ function HomePage() {
           <div className="flex items-center gap-6">
             {[
               { label: 'Privacy', href: '/privacy' },
-              { label: 'Terms', href: '#' },
+              { label: 'Terms', href: '/terms' },
               { label: 'Support', href: '/support' },
               { label: 'Careers', href: '#' },
             ].map((item) =>
@@ -62,6 +63,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
         <Route path="/download" element={<DownloadPage />} />
         <Route path="/support" element={<SupportPage />} />
       </Routes>
