@@ -46,7 +46,7 @@ const sections = [
     items: [
       'You must provide accurate information when creating your account and keep it current.',
       'You are responsible for safeguarding your credentials and for all activity that occurs under your account.',
-      'Notify us immediately at security@filana.app if you suspect unauthorized access.',
+      'Notify us immediately at hamza.daqa@gmail.com if you suspect unauthorized access.',
       'One person or business per account; account sharing is not permitted.',
     ],
   },
@@ -141,7 +141,7 @@ const sections = [
   {
     id: 'contact',
     title: '18. Contact',
-    body: 'Questions about these Terms? Email support@filana.app.',
+    body: 'Questions about these Terms? Email hamza.daqa@gmail.com.',
   },
 ]
 
