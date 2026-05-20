@@ -29,8 +29,9 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <Link to="/" className="flex items-center px-4 pr-6">
+        <Link to="/" className="flex items-center gap-2 px-4 pr-6">
           <img src="/FILANA.png" alt="Filana" className="h-6 w-auto" />
+          <span className="text-white text-[15px] font-semibold tracking-tight">Filana</span>
         </Link>
 
         {/* Nav items */}
