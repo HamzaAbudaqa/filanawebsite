@@ -6,7 +6,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const LAST_UPDATED = 'June 25, 2026'
-export const CONTACT_EMAIL = 'hamza.daqa@gmail.com'
+export const CONTACT_EMAIL = 'supportfilana@gmail.com'
 
 export const INTRO = [
   'This Privacy Notice for **Filana** describes how and why we might access, collect, store, use, and/or share your personal information when you use our Services, including when you download and use our mobile application (Filana) or engage with us in other related ways, including any marketing or events.',

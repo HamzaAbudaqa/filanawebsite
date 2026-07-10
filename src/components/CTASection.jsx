@@ -20,16 +20,16 @@ export default function CTASection() {
           </div>
 
           <h2 className="text-[40px] md:text-[60px] lg:text-[72px] font-bold tracking-[-0.03em] leading-[1] mb-6">
-            <span className="text-[#0E0E0E]">Take control</span>
+            <span className="text-[#0E0E0E]">Stop doing books</span>
             <br />
-            <span className="text-black/25">of your finances.</span>
+            <span className="text-black/25">the hard way.</span>
           </h2>
 
           <p
             className="text-[16px] md:text-[18px] max-w-md mx-auto leading-relaxed mb-10"
             style={{ color: 'rgba(14,14,14,0.45)' }}
           >
-            Download Filana and see where your money actually goes. 14 days free, then $9.99/mo.
+            Download Filana and get this month's expenses categorized and receipted automatically. 14 days free, then $9.99/mo.
           </p>
 
           <div className="flex items-center justify-center gap-3">
@@ -43,7 +43,7 @@ export default function CTASection() {
               onMouseLeave={e => e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.16)'}
               onClick={() => navigate('/download')}
             >
-              Start tracking
+              Get Filana
             </button>
             <button
               className="font-medium px-8 py-4 rounded-full text-[15px] transition-all duration-300"
@@ -54,6 +54,7 @@ export default function CTASection() {
               }}
               onMouseEnter={e => { e.currentTarget.style.background = 'rgba(14,14,14,0.07)' }}
               onMouseLeave={e => { e.currentTarget.style.background = 'rgba(14,14,14,0.04)' }}
+              onClick={() => navigate('/services')}
             >
               See how it works
             </button>

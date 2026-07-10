@@ -30,7 +30,7 @@ const items = [
   },
   {
     label: 'CRA audit-ready',
-    sub: 'Every receipt, organized',
+    sub: 'Every receipt, matched and filed',
     icon: (
       <>
         <path d="M7 3h10a1 1 0 0 1 1 1v16l-3-2-3 2-3-2-3 2V4a1 1 0 0 1 1-1z" />

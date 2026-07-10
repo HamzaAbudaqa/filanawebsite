@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 const ACCENT = '#C2703D'
 
 const stats = [
-  { value: '250K+', label: 'Active users', sub: 'and growing' },
-  { value: '$2.1B', label: 'Tracked annually', sub: 'across all accounts' },
-  { value: '99.8%', label: 'Accuracy', sub: 'AI categorization' },
-  { value: '4.9', label: 'App Store rating', sub: '12K+ reviews' },
+  { value: '<2s', label: 'Mentor response time', sub: 'ask, get an answer' },
+  { value: '150+', label: 'AI insight types', sub: 'trends, anomalies, forecasts' },
+  { value: '40+', label: 'Expense categories', sub: 'auto-sorted, no rules' },
+  { value: '24/7', label: 'Always-on tracking', sub: 'every transaction, in real time' },
 ]
 
 export default function StatsSection() {
@@ -15,7 +15,7 @@ export default function StatsSection() {
       <div className="max-w-6xl mx-auto mb-16">
         <div className="flex items-center gap-2 mb-2">
           <div className="w-1.5 h-1.5 rounded-full" style={{ background: ACCENT }} />
-          <span className="text-[12px] text-black/40 uppercase tracking-[3px] font-medium">Trusted by thousands</span>
+          <span className="text-[12px] text-black/40 uppercase tracking-[3px] font-medium">Under the hood</span>
         </div>
       </div>
 

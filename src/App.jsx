@@ -1,9 +1,12 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import TrustStrip from './components/TrustStrip'
+import ProblemSection from './components/ProblemSection'
 import FeatureSection from './components/FeatureSection'
 import StatsSection from './components/StatsSection'
+import AccountantSection from './components/AccountantSection'
 import CTASection from './components/CTASection'
 import ServicesPage from './pages/ServicesPage'
 import PrivacyPage from './pages/PrivacyPage'
@@ -12,14 +15,29 @@ import DownloadPage from './pages/DownloadPage'
 import SupportPage from './pages/SupportPage'
 import Logo from './components/Logo'
 
+function ScrollToHash() {
+  const location = useLocation()
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [location.pathname, location.hash])
+  return null
+}
+
 function HomePage() {
   return (
     <div className="relative min-h-screen bg-white">
       <Navbar />
       <Hero />
       <TrustStrip />
+      <ProblemSection />
       <FeatureSection />
       <StatsSection />
+      <AccountantSection />
       <CTASection />
 
       {/* Footer */}
@@ -33,7 +51,6 @@ function HomePage() {
               { label: 'Privacy', href: '/privacy' },
               { label: 'Terms', href: '/terms' },
               { label: 'Support', href: '/support' },
-              { label: 'Careers', href: '#' },
             ].map((item) =>
               item.href.startsWith('/') ? (
                 <Link
@@ -65,6 +82,7 @@ function HomePage() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToHash />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />

@@ -6,22 +6,8 @@ const ACCENT = '#C2703D'
 
 const services = [
   {
-    tag: 'AI Categorization',
-    title: 'Every expense, auto-sorted.',
-    description:
-      'Filana learns from your spending patterns and categorizes every transaction the moment it arrives — no rules to set, no manual sorting. Groceries, subscriptions, dining, travel: it just knows.',
-    bullets: [
-      'Learns and adapts to your personal spending habits',
-      'Handles edge cases like split bills and refunds',
-      'Supports 40+ categories out of the box',
-      'Lets you override and retrain in one tap',
-    ],
-    image: '/screenshots/dashboard.png',
-    flip: false,
-  },
-  {
     tag: 'Receipt Scanning',
-    title: 'Snap a receipt. Done.',
+    title: 'Snap a receipt. Stay audit-ready.',
     description:
       'Point your camera at any paper or digital receipt. Filana extracts the vendor, total, date, and category, then automatically matches it to the transaction — even from crumpled or low-light photos.',
     bullets: [
@@ -31,6 +17,20 @@ const services = [
       'Keeps every receipt organized and CRA audit-ready',
     ],
     image: '/screenshots/receipts.png',
+    flip: false,
+  },
+  {
+    tag: 'AI Categorization',
+    title: 'Business or personal? Sorted instantly.',
+    description:
+      'Filana learns from your spending patterns and categorizes every transaction the moment it arrives — no rules to set, no manual sorting. Client dinners, software subscriptions, office supplies: it just knows.',
+    bullets: [
+      'Learns and adapts to your business spending habits',
+      'Handles edge cases like split bills and refunds',
+      'Supports 40+ categories out of the box',
+      'Lets you override and retrain in one tap',
+    ],
+    image: '/screenshots/dashboard.png',
     flip: true,
   },
   {
@@ -171,15 +171,15 @@ export default function ServicesPage() {
           <h1 className="text-[42px] md:text-[64px] font-bold tracking-tight leading-[1.0] mb-5">
             <span className="text-[#0E0E0E]">Everything you need</span>
             <br />
-            <span style={{ color: 'rgba(14,14,14,0.28)' }}>to own your finances.</span>
+            <span style={{ color: 'rgba(14,14,14,0.28)' }}>to run clean books.</span>
           </h1>
 
           <p
             className="text-[16px] md:text-[18px] leading-relaxed max-w-xl mx-auto"
             style={{ color: 'rgba(14,14,14,0.45)' }}
           >
-            From automatic categorization to an AI CFO that answers your money questions,
-            here's every feature that makes Filana different.
+            From receipt matching to an AI CFO that finds your deductions,
+            here's every feature that makes tax time a non-event.
           </p>
         </motion.div>
       </section>
@@ -218,7 +218,7 @@ export default function ServicesPage() {
             onMouseLeave={e => e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.16)'}
             onClick={() => navigate('/download')}
           >
-            Start tracking
+            Get Filana
           </button>
         </motion.div>
       </section>

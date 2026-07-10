@@ -91,7 +91,7 @@ export default function PrivacyPage() {
           </p>
           <p>
             <span style={{ color: 'rgba(14,14,14,0.72)', fontWeight: 600 }}>Questions or concerns?</span> Reading this Privacy Notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at{' '}
-            <a href="mailto:hamza.daqa@gmail.com" style={{ color: 'rgba(14,14,14,0.6)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>hamza.daqa@gmail.com</a>.
+            <a href="mailto:supportfilana@gmail.com" style={{ color: 'rgba(14,14,14,0.6)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>supportfilana@gmail.com</a>.
           </p>
         </motion.div>
 
@@ -104,10 +104,10 @@ export default function PrivacyPage() {
           className="mb-12 rounded-2xl p-6"
           style={{ background: '#F6F6F5', border: '1px solid rgba(14,14,14,0.06)' }}
         >
-          <h2 className="text-[17px] font-semibold text-white mb-4 tracking-tight">Summary of Key Points</h2>
-          <div className="flex flex-col gap-3 text-[14px]" style={{ color: 'rgba(255,255,255,0.42)' }}>
+          <h2 className="text-[17px] font-semibold text-[#0E0E0E] mb-4 tracking-tight">Summary of Key Points</h2>
+          <div className="flex flex-col gap-3 text-[14px]" style={{ color: 'rgba(14,14,14,0.5)' }}>
             {SUMMARY.map(([q, a], i) => (
-              <p key={i}><span style={{ color: 'rgba(255,255,255,0.68)', fontWeight: 600 }}>{q} </span>{a}</p>
+              <p key={i}><span style={{ color: 'rgba(14,14,14,0.75)', fontWeight: 600 }}>{q} </span>{a}</p>
             ))}
           </div>
         </motion.div>

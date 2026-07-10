@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import Logo from './Logo'
 
 const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services' },
-  { label: 'Privacy', href: '/privacy' },
+  { label: 'Features', href: '/services' },
+  { label: 'For accountants', href: '/#accountants' },
+  { label: 'Support', href: '/support' },
 ]
 
 export default function Navbar() {
@@ -29,10 +28,9 @@ export default function Navbar() {
           boxShadow: '0 8px 32px rgba(0,0,0,0.08), 0 1px 0 rgba(255,255,255,0.6) inset',
         }}
       >
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 px-4 pr-6">
-          <img src="/FILANA.png" alt="Filana" className="h-6 w-auto" />
-          <span className="text-white text-[15px] font-semibold tracking-tight">Filana</span>
+        {/* Wordmark */}
+        <Link to="/" className="flex items-center px-4 pr-6">
+          <span className="text-[#0E0E0E] text-[15px] font-semibold tracking-tight">Filana</span>
         </Link>
 
         {/* Nav items */}
@@ -43,7 +41,7 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 to={item.href}
-                className="text-[13px] transition-all duration-300 px-4 py-2 rounded-full hover:bg-black/[0.04]"
+                className="text-[13px] whitespace-nowrap transition-all duration-300 px-4 py-2 rounded-full hover:bg-black/[0.04]"
                 style={{
                   color: isActive ? 'rgba(14,14,14,0.9)' : 'rgba(14,14,14,0.45)',
                   fontWeight: isActive ? 600 : 500,
@@ -70,7 +68,7 @@ export default function Navbar() {
           }}
           onClick={() => navigate('/download')}
         >
-          Start tracking
+          Get Filana
         </button>
       </div>
     </motion.nav>

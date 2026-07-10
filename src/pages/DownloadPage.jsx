@@ -5,14 +5,17 @@ const ACCENT = '#C2703D'
 
 const features = [
   { label: 'Auto expense tracking' },
-  { label: 'AI-driven insights' },
-  { label: 'Smart categorization' },
+  { label: 'Receipt matching, CRA-ready' },
+  { label: 'AI categorization, no manual sorting' },
 ]
+
+// TODO: replace with the real App Store listing URL before sharing this page live.
+const APP_STORE_URL = 'https://apps.apple.com'
 
 function AppStoreButton() {
   return (
     <motion.a
-      href="https://apps.apple.com"
+      href={APP_STORE_URL}
       target="_blank"
       rel="noopener noreferrer"
       whileHover={{ scale: 1.03, y: -2 }}
@@ -80,34 +83,6 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen relative overflow-hidden bg-white">
 
-      {/* Ambient background glow */}
-      <div
-        style={{
-          position: 'fixed',
-          top: '35%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: 900,
-          height: 900,
-          background: 'radial-gradient(circle, rgba(194,112,61,0.08) 0%, transparent 65%)',
-          pointerEvents: 'none',
-          zIndex: 0,
-        }}
-      />
-      {/* Secondary accent glow */}
-      <div
-        style={{
-          position: 'fixed',
-          top: '65%',
-          left: '25%',
-          width: 400,
-          height: 400,
-          background: 'radial-gradient(circle, rgba(194,112,61,0.06) 0%, transparent 70%)',
-          pointerEvents: 'none',
-          zIndex: 0,
-        }}
-      />
-
       <Navbar />
 
       <section className="relative z-10 max-w-5xl mx-auto px-6 pt-28 pb-32 flex flex-col md:flex-row items-center gap-16 md:gap-24">
@@ -119,21 +94,10 @@ export default function DownloadPage() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="relative flex-shrink-0"
         >
-          {/* Per-phone glow halo */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: -50,
-              background: 'radial-gradient(ellipse at 50% 55%, rgba(194,112,61,0.14) 0%, transparent 65%)',
-              pointerEvents: 'none',
-              borderRadius: '50%',
-            }}
-          />
-
           <div
             style={{
               transform: 'perspective(1400px) rotateY(-7deg) rotateX(4deg)',
-              filter: 'drop-shadow(0 60px 100px rgba(0,0,0,0.20)) drop-shadow(-8px 16px 40px rgba(0,0,0,0.12)) drop-shadow(0 0 50px rgba(194,112,61,0.10))',
+              filter: 'drop-shadow(0 60px 100px rgba(0,0,0,0.20)) drop-shadow(-8px 16px 40px rgba(0,0,0,0.12))',
             }}
           >
             <PhoneMockup />
@@ -152,7 +116,7 @@ export default function DownloadPage() {
               className="text-[46px] md:text-[58px] font-bold leading-[1.02] text-[#0E0E0E] mb-4"
               style={{ letterSpacing: '-0.03em' }}
             >
-              Your finances,<br />
+              Your books,<br />
               <span style={{ color: ACCENT }}>finally organized.</span>
             </h1>
             <p className="text-[16px] leading-relaxed" style={{ color: 'rgba(14,14,14,0.45)' }}>
