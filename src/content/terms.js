@@ -6,7 +6,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const LAST_UPDATED = 'June 25, 2026'
-export const CONTACT_EMAIL = 'hamza.daqa@gmail.com'
+export const CONTACT_EMAIL = 'supportfilana@gmail.com'
 
 export const TOC = [
   { id: 'agreement',        label: '1. Agreement to These Terms' },
@@ -51,7 +51,7 @@ export const sections = [
     items: [
       'You must provide accurate information when creating your account and keep it current.',
       'You are responsible for safeguarding your credentials and for all activity that occurs under your account.',
-      'Notify us immediately at hamza.daqa@gmail.com if you suspect unauthorized access.',
+      'Notify us immediately at supportfilana@gmail.com if you suspect unauthorized access.',
       'One person or business per account; account sharing is not permitted.',
     ],
   },
