@@ -28,7 +28,7 @@ const faqs = [
 
 export default function SupportPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#050505' }}>
+    <div className="min-h-screen" style={{ background: '#FFFFFF' }}>
       <Navbar />
 
       {/* Header */}
@@ -40,14 +40,14 @@ export default function SupportPage() {
         >
           <div
             className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 mb-6 text-[12px] font-medium uppercase"
-            style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.38)', letterSpacing: '0.15em' }}
+            style={{ background: 'rgba(14,14,14,0.06)', color: 'rgba(14,14,14,0.38)', letterSpacing: '0.15em' }}
           >
             Support
           </div>
-          <h1 className="text-[40px] md:text-[58px] font-bold tracking-tight text-white leading-[1.05] mb-4">
+          <h1 className="text-[40px] md:text-[58px] font-bold tracking-tight text-[#0E0E0E] leading-[1.05] mb-4">
             How can we help?
           </h1>
-          <p className="text-[16px] leading-relaxed max-w-md mx-auto" style={{ color: 'rgba(255,255,255,0.35)' }}>
+          <p className="text-[16px] leading-relaxed max-w-md mx-auto" style={{ color: 'rgba(14,14,14,0.35)' }}>
             Browse the common questions below, or reach out directly — we respond within 24 hours.
           </p>
         </motion.div>
@@ -64,49 +64,49 @@ export default function SupportPage() {
           href={`mailto:${SUPPORT_EMAIL}`}
           className="flex items-center justify-between gap-4 rounded-2xl px-6 py-5 transition-all duration-200 group"
           style={{
-            background: 'rgba(255,255,255,0.03)',
-            border: '1px solid rgba(255,255,255,0.08)',
+            background: 'rgba(14,14,14,0.03)',
+            border: '1px solid rgba(14,14,14,0.08)',
             textDecoration: 'none',
           }}
-          onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.055)'}
-          onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.03)'}
+          onMouseEnter={e => e.currentTarget.style.background = 'rgba(14,14,14,0.055)'}
+          onMouseLeave={e => e.currentTarget.style.background = 'rgba(14,14,14,0.03)'}
         >
           <div className="flex items-center gap-4">
             <div
               className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-              style={{ background: 'rgba(255,255,255,0.06)' }}
+              style={{ background: 'rgba(14,14,14,0.06)' }}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <rect x="2" y="4" width="20" height="16" rx="3" stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" />
-                <path d="M2 8l10 7 10-7" stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" strokeLinecap="round" />
+                <rect x="2" y="4" width="20" height="16" rx="3" stroke="rgba(14,14,14,0.45)" strokeWidth="1.5" />
+                <path d="M2 8l10 7 10-7" stroke="rgba(14,14,14,0.45)" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </div>
             <div>
-              <p className="text-[13px] mb-0.5" style={{ color: 'rgba(255,255,255,0.3)' }}>Email us at</p>
-              <p className="text-[15px] font-medium" style={{ color: 'rgba(255,255,255,0.75)' }}>{SUPPORT_EMAIL}</p>
+              <p className="text-[13px] mb-0.5" style={{ color: 'rgba(14,14,14,0.3)' }}>Email us at</p>
+              <p className="text-[15px] font-medium" style={{ color: 'rgba(14,14,14,0.75)' }}>{SUPPORT_EMAIL}</p>
             </div>
           </div>
           <svg
             width="16" height="16" viewBox="0 0 24 24" fill="none"
             className="transition-transform duration-200 group-hover:translate-x-1"
           >
-            <path d="M5 12h14M13 6l6 6-6 6" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="rgba(14,14,14,0.25)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </a>
       </motion.div>
 
       {/* Divider */}
       <div className="max-w-3xl mx-auto px-6">
-        <div style={{ height: '1px', background: 'rgba(255,255,255,0.06)' }} />
+        <div style={{ height: '1px', background: 'rgba(14,14,14,0.06)' }} />
       </div>
 
       {/* FAQ */}
       <section className="max-w-3xl mx-auto px-6 py-16 pb-32">
-        <h2 className="text-[18px] font-semibold text-white mb-8 tracking-tight">
+        <h2 className="text-[18px] font-semibold text-[#0E0E0E] mb-8 tracking-tight">
           Common questions
         </h2>
 
-        <div className="flex flex-col gap-px" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="flex flex-col gap-px" style={{ borderTop: '1px solid rgba(14,14,14,0.06)' }}>
           {faqs.map(({ q, a }, i) => (
             <motion.div
               key={i}
@@ -115,19 +115,19 @@ export default function SupportPage() {
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.45, delay: i * 0.05 }}
               className="py-6"
-              style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+              style={{ borderBottom: '1px solid rgba(14,14,14,0.06)' }}
             >
-              <p className="text-[15px] font-medium text-white mb-2">{q}</p>
-              <p className="text-[14px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.4)' }}>{a}</p>
+              <p className="text-[15px] font-medium text-[#0E0E0E] mb-2">{q}</p>
+              <p className="text-[14px] leading-relaxed" style={{ color: 'rgba(14,14,14,0.4)' }}>{a}</p>
             </motion.div>
           ))}
         </div>
 
-        <p className="mt-12 text-[14px] text-center" style={{ color: 'rgba(255,255,255,0.22)' }}>
+        <p className="mt-12 text-[14px] text-center" style={{ color: 'rgba(14,14,14,0.22)' }}>
           Still stuck?{' '}
           <a
             href={`mailto:${SUPPORT_EMAIL}`}
-            style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'underline', textUnderlineOffset: '3px' }}
+            style={{ color: 'rgba(14,14,14,0.5)', textDecoration: 'underline', textUnderlineOffset: '3px' }}
           >
             Email us
           </a>{' '}

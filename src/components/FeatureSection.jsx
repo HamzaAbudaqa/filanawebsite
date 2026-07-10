@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
-const PINK = '#d94391'
+const ACCENT = '#C2703D'
 
 export default function FeatureSection() {
   return (
@@ -10,8 +10,8 @@ export default function FeatureSection() {
 
         {/* Section label */}
         <div className="flex items-center gap-2 mb-4">
-          <div className="w-1.5 h-1.5 rounded-full" style={{ background: PINK }} />
-          <span className="text-[12px] text-white/25 uppercase tracking-[3px] font-medium">Features</span>
+          <div className="w-1.5 h-1.5 rounded-full" style={{ background: ACCENT }} />
+          <span className="text-[12px] text-black/40 uppercase tracking-[3px] font-medium">Features</span>
         </div>
 
         <motion.h2
@@ -21,9 +21,9 @@ export default function FeatureSection() {
           transition={{ duration: 0.7 }}
           className="text-[36px] md:text-[52px] font-bold tracking-tight leading-[1.05] mb-16 max-w-2xl"
         >
-          <span className="text-white">Finance, reimagined</span>
+          <span className="text-[#0E0E0E]">Finance, reimagined</span>
           <br />
-          <span className="text-white/25">with intelligence.</span>
+          <span className="text-black/25">with intelligence.</span>
         </motion.h2>
 
         {/* Feature cards grid */}
@@ -35,32 +35,36 @@ export default function FeatureSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="rounded-[24px] p-8 md:p-10 relative overflow-hidden group cursor-pointer"
+            className="rounded-[24px] p-8 md:p-10 relative overflow-hidden group cursor-pointer transition-shadow duration-500"
             style={{
-              background: '#0E0E0E',
-              border: '1px solid rgba(255,255,255,0.06)',
+              background: '#F6F6F5',
+              border: '1px solid rgba(0,0,0,0.06)',
             }}
+            onMouseEnter={e => e.currentTarget.style.boxShadow = '0 20px 48px rgba(0,0,0,0.08)'}
+            onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}
           >
+            <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-black/[0.015] group-hover:bg-black/[0.03] transition-colors duration-700" />
+
             <div className="relative">
               <div
                 className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 mb-6"
-                style={{ background: 'rgba(255,255,255,0.05)', color: 'rgba(255,255,255,0.40)' }}
+                style={{ background: 'rgba(0,0,0,0.05)', color: 'rgba(14,14,14,0.55)' }}
               >
                 <span className="text-[12px] font-medium">AI Categorization</span>
               </div>
 
-              <h3 className="text-[28px] md:text-[36px] font-bold text-white tracking-tight leading-[1.1] mb-4">
+              <h3 className="text-[28px] md:text-[36px] font-bold text-[#0E0E0E] tracking-tight leading-[1.1] mb-4">
                 Every expense,
                 <br />auto-sorted.
               </h3>
-              <p className="text-white/35 text-[15px] leading-relaxed max-w-sm">
+              <p className="text-black/45 text-[15px] leading-relaxed max-w-sm">
                 Filana learns your patterns and categorizes every transaction instantly. No rules, no manual sorting — just clarity.
               </p>
 
               <Link
                 to="/services"
                 className="inline-block mt-6 text-[14px] font-medium transition-colors duration-200"
-                style={{ color: PINK }}
+                style={{ color: ACCENT }}
                 onMouseEnter={e => e.currentTarget.style.opacity = '0.75'}
                 onMouseLeave={e => e.currentTarget.style.opacity = '1'}
               >
@@ -75,36 +79,38 @@ export default function FeatureSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="rounded-[24px] p-8 md:p-10 relative overflow-hidden group cursor-pointer"
+            className="rounded-[24px] p-8 md:p-10 relative overflow-hidden group cursor-pointer transition-shadow duration-500"
             style={{
-              background: '#0E0E0E',
-              border: '1px solid rgba(255,255,255,0.06)',
+              background: '#F6F6F5',
+              border: '1px solid rgba(0,0,0,0.06)',
             }}
+            onMouseEnter={e => e.currentTarget.style.boxShadow = '0 20px 48px rgba(0,0,0,0.08)'}
+            onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}
           >
-            <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-white/[0.015] group-hover:bg-white/[0.03] transition-colors duration-700" />
+            <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-black/[0.015] group-hover:bg-black/[0.03] transition-colors duration-700" />
 
             <div className="relative">
               <div
                 className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 mb-6"
-                style={{ background: 'rgba(255,255,255,0.05)', color: 'rgba(255,255,255,0.40)' }}
+                style={{ background: 'rgba(0,0,0,0.05)', color: 'rgba(14,14,14,0.55)' }}
               >
                 <span className="text-[12px] font-medium">Receipt Scanning</span>
               </div>
 
-              <h3 className="text-[28px] md:text-[36px] font-bold text-white tracking-tight leading-[1.1] mb-4">
+              <h3 className="text-[28px] md:text-[36px] font-bold text-[#0E0E0E] tracking-tight leading-[1.1] mb-4">
                 Snap a receipt.
                 <br />Done.
               </h3>
-              <p className="text-white/35 text-[15px] leading-relaxed max-w-sm">
-                Point your camera at any receipt. Filana extracts the vendor, total, date, and category in seconds.
+              <p className="text-black/45 text-[15px] leading-relaxed max-w-sm">
+                Point your camera at any receipt. Filana matches it to the transaction, extracts the total, and keeps you CRA audit-ready.
               </p>
 
               <Link
                 to="/services"
                 className="inline-block mt-6 text-[14px] font-medium transition-opacity duration-200"
-                style={{ color: 'rgba(255,255,255,0.35)' }}
-                onMouseEnter={e => e.currentTarget.style.color = 'rgba(255,255,255,0.60)'}
-                onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.35)'}
+                style={{ color: 'rgba(14,14,14,0.5)' }}
+                onMouseEnter={e => e.currentTarget.style.color = 'rgba(14,14,14,0.8)'}
+                onMouseLeave={e => e.currentTarget.style.color = 'rgba(14,14,14,0.5)'}
               >
                 Learn more →
               </Link>
@@ -118,26 +124,28 @@ export default function FeatureSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="mt-5 rounded-[24px] p-8 md:p-10 relative overflow-hidden"
+          className="mt-5 rounded-[24px] p-8 md:p-10 relative overflow-hidden transition-shadow duration-500"
           style={{
-            background: '#0E0E0E',
-            border: '1px solid rgba(255,255,255,0.06)',
+            background: '#F6F6F5',
+            border: '1px solid rgba(0,0,0,0.06)',
           }}
+          onMouseEnter={e => e.currentTarget.style.boxShadow = '0 20px 48px rgba(0,0,0,0.08)'}
+          onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}
         >
           <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div className="max-w-lg">
               <div
                 className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 mb-6"
-                style={{ background: 'rgba(255,255,255,0.05)', color: 'rgba(255,255,255,0.40)' }}
+                style={{ background: 'rgba(0,0,0,0.05)', color: 'rgba(14,14,14,0.55)' }}
               >
-                <span className="text-[12px] font-medium">AI Assistant</span>
+                <span className="text-[12px] font-medium">Mentor — your AI CFO</span>
               </div>
 
-              <h3 className="text-[28px] md:text-[36px] font-bold text-white tracking-tight leading-[1.1] mb-4">
-                Ask anything <span className="text-white/25">about your money.</span>
+              <h3 className="text-[28px] md:text-[36px] font-bold text-[#0E0E0E] tracking-tight leading-[1.1] mb-4">
+                Ask anything <span className="text-black/30">about your money.</span>
               </h3>
-              <p className="text-white/35 text-[15px] leading-relaxed">
-                Chat with Filana AI to get instant spending breakdowns, budget forecasts, and personalized savings advice. Like having a financial advisor in your pocket.
+              <p className="text-black/45 text-[15px] leading-relaxed">
+                Chat with Mentor to get instant spending breakdowns, health scores, and deductible expense finds. Like having a financial advisor in your pocket.
               </p>
             </div>
 
@@ -148,8 +156,8 @@ export default function FeatureSection() {
                 { val: '150+', desc: 'Insight types' },
               ].map((item, i) => (
                 <div key={i} className="text-right">
-                  <p className="text-[24px] font-bold text-white">{item.val}</p>
-                  <p className="text-[12px] text-white/25">{item.desc}</p>
+                  <p className="text-[24px] font-bold text-[#0E0E0E]">{item.val}</p>
+                  <p className="text-[12px] text-black/35">{item.desc}</p>
                 </div>
               ))}
             </div>

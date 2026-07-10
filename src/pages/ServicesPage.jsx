@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 
-const PINK = '#d94391'
+const ACCENT = '#C2703D'
 
 const services = [
   {
@@ -16,136 +16,90 @@ const services = [
       'Supports 40+ categories out of the box',
       'Lets you override and retrain in one tap',
     ],
-    images: ['/IMG_2265.PNG', '/IMG_2274.PNG'],
-    screenshotAlt: 'AI Categorization screen',
+    image: '/screenshots/dashboard.png',
     flip: false,
   },
   {
     tag: 'Receipt Scanning',
     title: 'Snap a receipt. Done.',
     description:
-      'Point your camera at any paper or digital receipt. Filana extracts the vendor, line items, total, date, and category in under two seconds — even from crumpled or low-light photos.',
+      'Point your camera at any paper or digital receipt. Filana extracts the vendor, total, date, and category, then automatically matches it to the transaction — even from crumpled or low-light photos.',
     bullets: [
       'Works on paper receipts, email PDFs, and screenshots',
       'Extracts vendor, items, total, tax, and date',
       'Auto-matches to your card transaction when possible',
-      'Stores original image for reference',
+      'Keeps every receipt organized and CRA audit-ready',
     ],
-    images: ['/IMG_2276.PNG'],
-    screenshotAlt: 'Receipt Scanning screen',
+    image: '/screenshots/receipts.png',
     flip: true,
   },
   {
-    tag: 'AI Assistant',
+    tag: 'Mentor — AI CFO',
     title: 'Ask anything about your money.',
     description:
-      'Chat with the Filana AI in plain English. Get instant spending summaries, budget forecasts, savings suggestions, and answers to questions like "How much did I spend on coffee last month?"',
+      'Chat with Mentor in plain English. Get instant spending summaries, health scores, deductible expense finds, and answers to questions like "Why did my spending change this month?"',
     bullets: [
       'Natural language — no financial jargon needed',
       'Understands context across your full transaction history',
       '150+ insight types: trends, anomalies, forecasts',
       'Responds in under 2 seconds on average',
     ],
-    images: ['/IMG_2272.PNG', '/IMG_2273.PNG'],
-    screenshotAlt: 'AI Assistant chat screen',
+    image: '/screenshots/mentor.png',
     flip: false,
   },
   {
-    tag: 'Spending Insights',
+    tag: 'Monthly Close',
     title: 'See patterns you never noticed.',
     description:
-      'Interactive charts break down your spending by category, merchant, time period, and more. Spot trends at a glance and understand exactly where your money goes each month.',
+      'Every month closes into a clean summary: total spend, category breakdown, and an AI-written recap that flags what changed and why. Track your health score to stay audit-ready year-round.',
     bullets: [
-      'Weekly, monthly, and yearly breakdowns',
+      'Monthly, and yearly breakdowns',
       'Category drill-down with merchant-level detail',
       'Comparison to previous periods',
-      'Unusual spend alerts',
+      'AI-written recap with deductible savings estimate',
     ],
-    images: ['/IMG_2277.PNG', '/IMG_2278.PNG'],
-    screenshotAlt: 'Spending Insights charts screen',
+    image: '/screenshots/monthly.png',
     flip: true,
   },
   {
     tag: 'Account Sync',
     title: 'All your accounts, one place.',
     description:
-      'Bank accounts sync through Plaid — the same trusted infrastructure behind Venmo and Robinhood — giving you access to 10,000+ financial institutions. Email receipts and subscriptions are pulled in via Google. All connections are read-only and encrypted end-to-end, so Filana can see your data but never touch it.',
+      'Bank accounts sync through Plaid — the same trusted infrastructure behind Venmo and Robinhood — giving you access to 10,000+ financial institutions. All connections are read-only and encrypted end-to-end, so Filana can see your data but never touch it.',
     bullets: [
       'Bank sync powered by Plaid — read-only, never moves money',
       'Email sync via Google for receipts and subscription tracking',
       'End-to-end 256-bit encryption on all synced data',
       'Revoke access at any time from your device settings',
     ],
-    images: ['/IMG_2264.PNG'],
-    screenshotAlt: 'Account Sync screen',
+    image: '/screenshots/sync.png',
     flip: true,
   },
 ]
 
-function PhoneFrame({ src, alt, style = {} }) {
+function PhoneFrame({ image, style = {} }) {
   return (
     <div
-      className="rounded-[32px] overflow-hidden flex-shrink-0"
+      className="rounded-[32px] overflow-hidden flex-shrink-0 bg-white"
       style={{
         width: 200,
-        border: '1px solid rgba(255,255,255,0.08)',
-        boxShadow: '0 32px 80px rgba(0,0,0,0.55)',
+        border: '1px solid rgba(0,0,0,0.08)',
+        boxShadow: '0 32px 80px rgba(0,0,0,0.14)',
+        aspectRatio: '9/18.5',
         ...style,
       }}
     >
-      <img src={src} alt={alt} className="w-full h-full object-cover object-top" />
+      <img src={image} alt="" className="w-full h-full object-cover object-top" />
     </div>
   )
 }
 
-function ScreenshotSlot({ alt, images }) {
-  if (images && images.length === 2) {
-    return (
-      <div className="relative flex items-end justify-center" style={{ width: 310, height: 440 }}>
-        {/* Back phone */}
-        <div className="absolute" style={{ left: 0, bottom: 0 }}>
-          <PhoneFrame src={images[1]} alt={alt} style={{ width: 195, opacity: 0.88 }} />
-        </div>
-        {/* Front phone */}
-        <div className="absolute" style={{ right: 0, bottom: 28 }}>
-          <PhoneFrame src={images[0]} alt={alt} style={{ width: 205 }} />
-        </div>
-      </div>
-    )
-  }
-
-  if (images && images.length === 1) {
-    return <PhoneFrame src={images[0]} alt={alt} style={{ width: 220 }} />
-  }
-
-  return (
-    <div
-      className="rounded-[32px] flex flex-col items-center justify-center gap-3"
-      style={{
-        width: 220,
-        aspectRatio: '9/18',
-        background: '#111111',
-        border: '1px solid rgba(255,255,255,0.07)',
-        boxShadow: '0 32px 80px rgba(0,0,0,0.5)',
-      }}
-    >
-      <div
-        className="w-10 h-10 rounded-full flex items-center justify-center"
-        style={{ background: 'rgba(255,255,255,0.05)' }}
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="3" width="18" height="18" rx="3" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" />
-          <circle cx="8.5" cy="8.5" r="1.5" fill="rgba(255,255,255,0.25)" />
-          <path d="M3 16l5-5 4 4 3-3 6 6" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
-      <p className="text-[11px] text-center px-4" style={{ color: 'rgba(255,255,255,0.18)' }}>{alt}</p>
-    </div>
-  )
+function ScreenshotSlot({ image }) {
+  return <PhoneFrame image={image} style={{ width: 220 }} />
 }
 
 function ServiceRow({ service }) {
-  const { tag, title, description, bullets, screenshotAlt, images, flip } = service
+  const { tag, title, description, bullets, image, flip } = service
 
   return (
     <motion.div
@@ -154,36 +108,36 @@ function ServiceRow({ service }) {
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.65, delay: 0.05 }}
       className={`flex flex-col ${flip ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12 md:gap-20 py-20`}
-      style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+      style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}
     >
       {/* Screenshot */}
       <div className="flex-shrink-0 w-full md:w-auto flex justify-center">
-        <ScreenshotSlot alt={screenshotAlt} images={images} />
+        <ScreenshotSlot image={image} />
       </div>
 
       {/* Text */}
       <div className="flex-1 min-w-0">
         <div
           className="inline-flex items-center rounded-full px-3 py-1.5 mb-5 text-[11px] font-medium uppercase tracking-widest"
-          style={{ background: 'rgba(255,255,255,0.05)', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.12em' }}
+          style={{ background: 'rgba(0,0,0,0.05)', color: 'rgba(14,14,14,0.5)', letterSpacing: '0.12em' }}
         >
           {tag}
         </div>
 
-        <h3 className="text-[30px] md:text-[38px] font-bold tracking-tight leading-[1.1] text-white mb-4">
+        <h3 className="text-[30px] md:text-[38px] font-bold tracking-tight leading-[1.1] text-[#0E0E0E] mb-4">
           {title}
         </h3>
 
-        <p className="text-[15px] leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.38)' }}>
+        <p className="text-[15px] leading-relaxed mb-6" style={{ color: 'rgba(14,14,14,0.5)' }}>
           {description}
         </p>
 
         <ul className="flex flex-col gap-3">
           {bullets.map((b, i) => (
-            <li key={i} className="flex items-start gap-3 text-[14px]" style={{ color: 'rgba(255,255,255,0.50)' }}>
+            <li key={i} className="flex items-start gap-3 text-[14px]" style={{ color: 'rgba(14,14,14,0.62)' }}>
               <span
                 className="mt-[5px] w-1.5 h-1.5 rounded-full flex-shrink-0"
-                style={{ background: 'rgba(255,255,255,0.25)' }}
+                style={{ background: ACCENT }}
               />
               {b}
             </li>
@@ -197,7 +151,7 @@ function ServiceRow({ service }) {
 export default function ServicesPage() {
   const navigate = useNavigate()
   return (
-    <div className="min-h-screen" style={{ background: '#050505' }}>
+    <div className="min-h-screen bg-white">
       <Navbar />
 
       {/* Hero */}
@@ -209,22 +163,22 @@ export default function ServicesPage() {
         >
           <div
             className="inline-flex items-center rounded-full px-3 py-1.5 mb-6 text-[11px] font-medium uppercase"
-            style={{ background: 'rgba(255,255,255,0.05)', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.15em' }}
+            style={{ background: 'rgba(0,0,0,0.05)', color: 'rgba(14,14,14,0.5)', letterSpacing: '0.15em' }}
           >
             What Filana does
           </div>
 
           <h1 className="text-[42px] md:text-[64px] font-bold tracking-tight leading-[1.0] mb-5">
-            <span className="text-white">Everything you need</span>
+            <span className="text-[#0E0E0E]">Everything you need</span>
             <br />
-            <span style={{ color: 'rgba(255,255,255,0.22)' }}>to own your finances.</span>
+            <span style={{ color: 'rgba(14,14,14,0.28)' }}>to own your finances.</span>
           </h1>
 
           <p
             className="text-[16px] md:text-[18px] leading-relaxed max-w-xl mx-auto"
-            style={{ color: 'rgba(255,255,255,0.35)' }}
+            style={{ color: 'rgba(14,14,14,0.45)' }}
           >
-            From automatic categorization to an AI that answers your money questions,
+            From automatic categorization to an AI CFO that answers your money questions,
             here's every feature that makes Filana different.
           </p>
         </motion.div>
@@ -240,7 +194,7 @@ export default function ServicesPage() {
       {/* Bottom CTA */}
       <section
         className="py-24 px-6 text-center"
-        style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}
+        style={{ borderTop: '1px solid rgba(0,0,0,0.05)' }}
       >
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -248,20 +202,20 @@ export default function ServicesPage() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-[34px] md:text-[50px] font-bold tracking-tight text-white mb-4">
+          <h2 className="text-[34px] md:text-[50px] font-bold tracking-tight text-[#0E0E0E] mb-4">
             Ready to try it?
           </h2>
-          <p className="text-[15px] mb-8" style={{ color: 'rgba(255,255,255,0.30)' }}>
-            Your first month is free. No credit card required.
+          <p className="text-[15px] mb-8" style={{ color: 'rgba(14,14,14,0.4)' }}>
+            14 days free, then $9.99/mo. Cancel anytime.
           </p>
           <button
             className="font-semibold px-8 py-4 rounded-full text-[15px] text-white transition-all duration-300 active:scale-95"
             style={{
-              background: PINK,
-              boxShadow: '0 0 24px rgba(217,67,145,0.18), 0 4px 15px rgba(0,0,0,0.3)',
+              background: '#0E0E0E',
+              boxShadow: '0 8px 24px rgba(0,0,0,0.16)',
             }}
-            onMouseEnter={e => e.currentTarget.style.boxShadow = '0 0 36px rgba(217,67,145,0.28), 0 4px 15px rgba(0,0,0,0.3)'}
-            onMouseLeave={e => e.currentTarget.style.boxShadow = '0 0 24px rgba(217,67,145,0.18), 0 4px 15px rgba(0,0,0,0.3)'}
+            onMouseEnter={e => e.currentTarget.style.boxShadow = '0 10px 32px rgba(0,0,0,0.24)'}
+            onMouseLeave={e => e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.16)'}
             onClick={() => navigate('/download')}
           >
             Start tracking
