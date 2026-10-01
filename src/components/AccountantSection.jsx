@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Phone3D } from './DeviceMockupCluster'
 
 const ACCENT = '#C2703D'
 const MINT = '#1E8449'
@@ -73,24 +74,40 @@ export default function AccountantSection() {
           className="relative flex justify-center"
         >
           <div
-            className="absolute inset-0 m-auto"
+            className="absolute inset-0 m-auto pointer-events-none"
             style={{
-              width: '80%',
-              height: '80%',
-              background: 'radial-gradient(ellipse at center, rgba(30,132,73,0.14) 0%, transparent 70%)',
-              filter: 'blur(20px)',
+              width: '110%',
+              height: '90%',
+              background: 'radial-gradient(ellipse 60% 55% at center, rgba(194,112,61,0.5) 0%, rgba(194,112,61,0.15) 55%, transparent 75%)',
+              filter: 'blur(30px)',
             }}
           />
-          <div
-            className="relative rounded-[32px] overflow-hidden bg-white"
-            style={{
-              width: 260,
-              border: '1px solid rgba(255,255,255,0.1)',
-              boxShadow: '0 32px 80px rgba(0,0,0,0.5)',
-              aspectRatio: '9/18.5',
-            }}
-          >
-            <img src="/screenshots/monthly.png" alt="Filana monthly close screen" className="w-full h-full object-cover object-top" />
+          <div className="relative" style={{ perspective: '1400px' }}>
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
+            >
+              <div
+                className="relative transition-transform duration-700 ease-out hover:[transform:rotateY(-6deg)_rotateX(3deg)]"
+                style={{ transformStyle: 'preserve-3d', transform: 'rotateY(-18deg) rotateX(7deg) rotateZ(1.5deg)' }}
+              >
+                {/* Side edge — a darker layer pushed back to give the phone thickness */}
+                <div
+                  className="absolute inset-0 rounded-[42px]"
+                  style={{
+                    transform: 'translateZ(-14px)',
+                    background: 'linear-gradient(160deg, #c9c8c4 0%, #7d7c78 50%, #5e5d5a 100%)',
+                  }}
+                />
+                <Phone3D frame="silver" className="relative w-[260px] h-[540px]">
+                  <img src="/screenshots/monthly.png" alt="Filana monthly close screen" className="w-full h-full object-cover object-top" />
+                </Phone3D>
+              </div>
+            </motion.div>
+            <div
+              className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[75%] h-[28px] rounded-full pointer-events-none"
+              style={{ background: 'radial-gradient(ellipse, rgba(0,0,0,0.6) 0%, transparent 70%)', filter: 'blur(10px)' }}
+            />
           </div>
         </motion.div>
 

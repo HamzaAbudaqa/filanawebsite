@@ -406,7 +406,7 @@ export default function ServicesPage() {
             className="text-[16px] md:text-[18px] leading-relaxed max-w-xl mx-auto"
             style={{ color: 'rgba(14,14,14,0.45)' }}
           >
-            From receipt matching to an AI CFO that finds your deductions —
+            From receipt matching to an AI CFO that finds your deductions :
             every feature that makes tax time a non-event.
           </p>
 

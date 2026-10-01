@@ -30,7 +30,7 @@ export default function Hero() {
         style={{ color: 'rgba(14,14,14,0.45)' }}
       >
         Automatic expense tracking, receipt matching, AI categorization,
-        and a financial assistant that finds what's deductible —
+        and a financial assistant that finds what's deductible :
         so tax time is an export, not a scramble.
       </motion.p>
 

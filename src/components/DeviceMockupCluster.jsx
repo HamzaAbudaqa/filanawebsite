@@ -4,20 +4,28 @@ function Screenshot({ src }) {
   return <img src={src} alt="" className="w-full h-full object-cover object-top" />
 }
 
-export function Phone3D({ children, className = '', style = {} }) {
+const FRAMES = {
+  dark: {
+    padding: 'p-[2.5px]',
+    background: 'linear-gradient(165deg, #4a4a4a 0%, #232323 30%, #161616 60%, #2e2e2e 100%)',
+    boxShadow: '0 25px 60px rgba(0,0,0,0.18), 0 10px 25px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.04)',
+  },
+  // Natural-titanium look, for placing a phone on dark backgrounds.
+  silver: {
+    padding: 'p-[4px]',
+    background: 'linear-gradient(160deg, #f4f4f2 0%, #b9b8b4 28%, #8d8c88 55%, #d6d5d1 80%, #9e9d99 100%)',
+    boxShadow: '0 30px 70px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.18), 0 0 80px rgba(194,112,61,0.25)',
+  },
+}
+
+export function Phone3D({ children, className = '', style = {}, frame = 'dark' }) {
+  const f = FRAMES[frame]
   return (
     <div className={`relative ${className}`} style={style}>
       {/* Outer metallic frame */}
       <div
-        className="w-full h-full rounded-[42px] p-[2.5px]"
-        style={{
-          background: 'linear-gradient(165deg, #4a4a4a 0%, #232323 30%, #161616 60%, #2e2e2e 100%)',
-          boxShadow: `
-            0 25px 60px rgba(0,0,0,0.18),
-            0 10px 25px rgba(0,0,0,0.10),
-            0 0 0 1px rgba(0,0,0,0.04)
-          `,
-        }}
+        className={`w-full h-full rounded-[42px] ${f.padding}`}
+        style={{ background: f.background, boxShadow: f.boxShadow }}
       >
         {/* Inner bezel */}
         <div className="w-full h-full rounded-[40px] bg-black p-[1.5px]">
