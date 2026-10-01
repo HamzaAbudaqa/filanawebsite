@@ -35,3 +35,22 @@ body {
   background: #C2703D30;
   color: #0E0E0E;
 }
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes feature-progress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.feature-progress {
+  animation-name: feature-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}

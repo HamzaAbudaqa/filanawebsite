@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import TrustStrip from './components/TrustStrip'
@@ -13,7 +13,7 @@ import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
 import DownloadPage from './pages/DownloadPage'
 import SupportPage from './pages/SupportPage'
-import Logo from './components/Logo'
+import Footer from './components/Footer'
 
 function ScrollToHash() {
   const location = useLocation()
@@ -38,43 +38,9 @@ function HomePage() {
       <FeatureSection />
       <StatsSection />
       <AccountantSection />
-      <CTASection />
+      <CTASection variant="light" />
 
-      {/* Footer */}
-      <footer className="border-t border-black/[0.06] py-12 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="opacity-50">
-            <Logo size={22} />
-          </div>
-          <div className="flex items-center gap-6">
-            {[
-              { label: 'Privacy', href: '/privacy' },
-              { label: 'Terms', href: '/terms' },
-              { label: 'Support', href: '/support' },
-            ].map((item) =>
-              item.href.startsWith('/') ? (
-                <Link
-                  key={item.label}
-                  to={item.href}
-                  className="text-[13px] text-black/30 hover:text-black/60 transition-colors duration-300"
-                  style={{ textDecoration: 'none' }}
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="text-[13px] text-black/30 hover:text-black/60 transition-colors duration-300"
-                >
-                  {item.label}
-                </a>
-              )
-            )}
-          </div>
-          <p className="text-[12px] text-black/20">&copy; 2026 Filana. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

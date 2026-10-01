@@ -4,7 +4,7 @@ function Screenshot({ src }) {
   return <img src={src} alt="" className="w-full h-full object-cover object-top" />
 }
 
-function Phone3D({ children, className = '', style = {} }) {
+export function Phone3D({ children, className = '', style = {} }) {
   return (
     <div className={`relative ${className}`} style={style}>
       {/* Outer metallic frame */}

@@ -88,52 +88,58 @@ const sectionToHtml = (sec, email) => {
 // ─── styles (inlined so the page is fully self-contained) ─────────────────────
 
 const STYLE = `
-  :root { color-scheme: dark; }
+  :root { color-scheme: light; }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0; background: #050505; color: rgba(255,255,255,0.85);
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.62; -webkit-font-smoothing: antialiased;
+    margin: 0; background: #fff; color: rgba(14,14,14,0.58);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
   }
-  a { color: rgba(255,255,255,0.72); text-decoration: underline; text-underline-offset: 3px; }
-  a:hover { color: #fff; }
+  a { color: #0E0E0E; text-decoration: underline; text-decoration-color: rgba(14,14,14,0.2); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: rgba(14,14,14,0.6); }
+  ::selection { background: #C2703D30; color: #0E0E0E; }
   .site-header {
-    position: sticky; top: 0; z-index: 10;
-    background: rgba(5,5,5,0.72); backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.06); padding: 16px 24px;
+    position: sticky; top: 20px; z-index: 10; width: calc(100% - 2rem); max-width: 560px; margin: 20px auto 0;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(255,255,255,0.8); backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4);
+    border: 1px solid rgba(0,0,0,0.06); border-radius: 999px; padding: 10px 12px 10px 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
   }
-  .brand { display: inline-block; }
-  .brand img { height: 22px; width: auto; display: block; opacity: 0.9; }
-  main { max-width: 760px; margin: 0 auto; padding: 56px 24px 88px; }
-  .eyebrow {
-    display: inline-block; text-transform: uppercase; letter-spacing: 0.15em;
-    font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.4);
-    background: rgba(255,255,255,0.06); padding: 6px 12px; border-radius: 999px; margin: 0 0 20px;
-  }
-  h1 { font-size: clamp(34px, 6vw, 52px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; color: #fff; margin: 0 0 12px; }
-  .updated { font-size: 13px; color: rgba(255,255,255,0.32); margin: 0 0 16px; }
-  .contact-line { font-size: 14px; color: rgba(255,255,255,0.5); margin: 0 0 40px; }
-  h2 { font-size: 21px; font-weight: 600; letter-spacing: -0.01em; color: #fff; margin: 48px 0 16px; scroll-margin-top: 90px; }
-  h3 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin: 26px 0 10px; }
-  p { color: rgba(255,255,255,0.55); margin: 0 0 14px; }
-  .lead { color: rgba(255,255,255,0.62); }
-  .note { color: rgba(255,255,255,0.42); }
+  .brand { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: #0E0E0E; text-decoration: none; }
+  .header-cta { background: #0E0E0E; color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 999px; }
+  .header-cta:hover { color: #fff; }
+  main { max-width: 760px; margin: 0 auto; padding: 96px 24px 88px; }
+  .hero { text-align: center; margin: 0 0 64px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 3px; font-size: 12px; font-weight: 500; color: rgba(14,14,14,0.4); margin: 0 0 24px; }
+  .eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 999px; background: #C2703D; }
+  h1 { font-size: clamp(44px, 8vw, 72px); font-weight: 700; letter-spacing: -0.04em; line-height: 0.98; color: #0E0E0E; margin: 0 0 24px; }
+  .updated { display: inline-block; font-size: 13px; font-weight: 500; color: rgba(14,14,14,0.55); background: rgba(14,14,14,0.04); border: 1px solid rgba(14,14,14,0.06); padding: 8px 16px; border-radius: 999px; margin: 0 0 12px; }
+  .contact-line { font-size: 14px; color: rgba(14,14,14,0.45); margin: 0; }
+  section { padding: 40px 0; border-top: 1px solid rgba(0,0,0,0.06); }
+  h2 { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: #0E0E0E; margin: 0 0 20px; scroll-margin-top: 110px; }
+  section[id] { scroll-margin-top: 110px; }
+  h3 { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; color: #0E0E0E; margin: 28px 0 10px; }
+  p { margin: 0 0 16px; font-size: 15.5px; }
+  strong { color: #0E0E0E; font-weight: 600; }
+  .lead { font-size: 16px; }
+  .note { color: rgba(14,14,14,0.45); }
   ul { margin: 8px 0 16px; padding: 0; list-style: none; }
-  li { position: relative; padding-left: 20px; margin: 0 0 10px; color: rgba(255,255,255,0.55); }
-  li::before { content: ""; position: absolute; left: 4px; top: 11px; width: 4px; height: 4px; border-radius: 999px; background: rgba(255,255,255,0.3); }
-  .card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 24px; margin: 0 0 40px; }
-  .card h2 { margin: 0 0 14px; font-size: 17px; }
-  .card p { font-size: 14px; color: rgba(255,255,255,0.5); }
-  .toc { background: rgba(14,14,14,0.5); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 24px; margin: 0 0 56px; }
-  .toc-label { text-transform: uppercase; letter-spacing: 0.16em; font-size: 11px; color: rgba(255,255,255,0.3); margin: 0 0 16px; }
-  .toc-list li { padding-left: 0; }
+  li { position: relative; padding-left: 20px; margin: 0 0 12px; font-size: 15.5px; }
+  li::before { content: ""; position: absolute; left: 2px; top: 11px; width: 6px; height: 6px; border-radius: 999px; background: #C2703D; }
+  .card { background: #F6F6F5; border: 1px solid rgba(0,0,0,0.04); border-radius: 24px; padding: 32px; margin: 40px 0 48px; }
+  .card h2 { margin: 0 0 20px; font-size: 18px; }
+  .card p { font-size: 14px; }
+  .toc { border: 1px solid rgba(0,0,0,0.07); border-radius: 20px; padding: 24px 28px; margin: 0 0 48px; }
+  .toc-label { text-transform: uppercase; letter-spacing: 2px; font-size: 11px; font-weight: 500; color: rgba(14,14,14,0.35); margin: 0 0 14px; }
+  .toc-list li { padding-left: 0; margin: 0 0 8px; }
   .toc-list li::before { display: none; }
-  .toc-list a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; }
-  .toc-list a:hover { color: #fff; }
-  .divider { height: 1px; background: rgba(255,255,255,0.06); margin: 8px 0 40px; }
-  .site-footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 32px 24px; text-align: center; color: rgba(255,255,255,0.3); font-size: 13px; }
-  .site-footer a { color: rgba(255,255,255,0.5); }
+  .toc-list a { color: rgba(14,14,14,0.55); text-decoration: none; font-size: 14px; }
+  .toc-list a:hover { color: #0E0E0E; }
+  .divider { display: none; }
+  .site-footer { border-top: 1px solid rgba(0,0,0,0.06); padding: 40px 24px; text-align: center; color: rgba(14,14,14,0.3); font-size: 13px; }
+  .site-footer p { font-size: 13px; margin: 0 0 8px; }
+  .site-footer a { color: rgba(14,14,14,0.5); }
 `
 
 // ─── page template ────────────────────────────────────────────────────────────
@@ -148,18 +154,22 @@ function renderPage({ slug, title, heading, eyebrow, lastUpdated, email, descrip
     <title>${esc(title)}</title>
     <meta name="description" content="${escAttr(description)}" />
     <link rel="canonical" href="${SITE}/${slug}" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <style>${STYLE}</style>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/" aria-label="Filana home"><img src="/FILANA.png" alt="Filana" /></a>
+      <a class="brand" href="/" aria-label="Filana home">Filana</a>
+      <a class="header-cta" href="/download">Get Filana</a>
     </header>
     <main>
-      ${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ''}
-      <h1>${esc(heading)}</h1>
-      <p class="updated">Last updated: ${esc(lastUpdated)}</p>
-      <p class="contact-line">Contact: <a href="mailto:${escAttr(email)}">${esc(email)}</a></p>
+      <div class="hero">
+        ${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ''}
+        <h1>${esc(heading)}</h1>
+        <p class="updated">Last updated ${esc(lastUpdated)}</p>
+        <p class="contact-line">Contact: <a href="mailto:${escAttr(email)}">${esc(email)}</a></p>
+      </div>
       ${introHtml}
     </main>
     <footer class="site-footer">
